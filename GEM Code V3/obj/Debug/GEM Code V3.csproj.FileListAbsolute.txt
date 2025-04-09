@@ -1,0 +1,25 @@
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\bin\Debug\GEM Code V3.exe.config
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\bin\Debug\GEM Code V3.exe
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\bin\Debug\GEM Code V3.pdb
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM Code V3.csprojAssemblyReference.cache
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.StartWindow.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.Properties.Resources.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM Code V3.csproj.GenerateResource.cache
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM Code V3.csproj.CoreCompileInputs.cache
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM Code V3.exe
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM Code V3.pdb
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.CalendarEditor.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.CarEditor.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.ClassEditor.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.GenericPodium.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.Podiums.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.SelectRace.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.SimRace.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.Top5Podium.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.ViewClassOrder.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.ViewTop8.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.UserSure.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.CrewMaker.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.DeleteCrews.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.CreateStandings.resources
+C:\Users\Steph\Documents\Excel Sims\Global Endurance Masters\GEM Code V3\obj\Debug\GEM_Code_V3.UserConfirm.resources
