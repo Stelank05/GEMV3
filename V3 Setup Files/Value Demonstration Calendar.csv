@@ -1,0 +1,6 @@
+Title:,Length:,Incident:,DNF:,,Length Type:,,Round No:,,Quali:,Points:,,Is Test:,,RacingClasses:
+24 Hour Demonstration Values,24,10,7,,WEC,,1,,A,B,,False,,C1,C2,C3,C4,C5
+10/12 Hour Demonstration Values,12,20,6,,WEC,,2,,A,B,,False,,C1,C2,C3,C4,C5
+6/8 Hour Demonstration Values,12,30,6,,WEC,,3,,A,B,,False,,C1,C2,C3,C4,C5
+IMSA Demonstration Values,8,10,7,,IMSA,,4,,A,B,,False,,C1,C2,C3,C4,C5
+70 Lap Demonstration Values,70,0,2,,Laps,,5,,A,B,,False,,C1,C2,C3,C4,C5

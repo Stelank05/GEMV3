@@ -1,0 +1,15 @@
+Qualifying Formats Available:
+A - HyperPole (w/ AutoStandings)
+B - Usual GEM Qualifying Format
+C - F1 Style Knock Out (3 Part Qualifying, Reducing Entrants)
+D - Road + Street IndyCar Qualifying
+E - Oval IndyCar Qualifying
+F - Indy 500 IndyCar Qualifying - Auto Standings Compatible
+
+Points Systems Available:
+A - GEM Points System Bracket A
+B - GEM Points System Bracket B
+C - GEM Points System Bracket C
+D - GEM Points System Bracket D
+E - Normal IndyCar Points System
+F - Double Points IndyCar Points System
