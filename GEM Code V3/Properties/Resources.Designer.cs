@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GEM_Code_V3.Properties {
+namespace GEM_Code_V3_1.Properties {
     using System;
     
     
