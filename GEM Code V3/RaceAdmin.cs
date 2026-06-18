@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public class RaceAdmin
     {
-        CommonData CD = new CommonData();
-
-        public List<Round> GetCalendar()
+        public List<Round> GetCalendar(CommonData CD)
         {
             List<Round> Calendar = new List<Round>();
 
@@ -76,7 +74,7 @@ namespace GEM_Code_V3
             catch
             {
                 CalendarEditor.UseMessageBox("Please Close the Calendar.csv File to Continue.", "Calendar File Open");
-                return GetCalendar();
+                return GetCalendar(CD);
             }
         }
 
@@ -100,6 +98,7 @@ namespace GEM_Code_V3
         {
             List<string> Classes = RoundInQuestion.GetLongRacingClasses();
 
+            Car CarModel;
             Entrant CarEntrant;
 
             string FilePath;
@@ -122,7 +121,9 @@ namespace GEM_Code_V3
                         {
                             string[] CarData = Car.Split(',');
 
-                            CarEntrant = new Entrant(CarData[0], CarData[1], CarData[2], CarData[3], CarData[4], Convert.ToInt32(CarData[5]), Convert.ToInt32(CarData[7]), Convert.ToInt32(CarData[9]), Index, Convert.ToBoolean(CarData[11]), tCD.GetClasses(C), RoundInQuestion); Index++;
+                            CarModel = GetCarModel(CarData[3], tCD);
+
+                            CarEntrant = new Entrant(CarData[0], CarData[1], CarData[2], CarData[3], CarData[4], Convert.ToInt32(CarData[5]), Convert.ToInt32(CarData[7]), Convert.ToInt32(CarData[9]), Index, Convert.ToBoolean(CarData[11]), tCD.GetClasses(C), CarModel, RoundInQuestion); Index++;
 
                             EntryList.Add(CarEntrant);
                         }
@@ -135,7 +136,7 @@ namespace GEM_Code_V3
                     {
                         string[] CarData = Car.Split(',');
 
-                        CarEntrant = new Entrant(CarData[0], CarData[1], CarData[2], CarData[3], CarData[4], Convert.ToInt32(CarData[5]), Convert.ToInt32(CarData[7]), Convert.ToInt32(CarData[9]), Index, Convert.ToBoolean(CarData[11]), tCD.GetClasses(C), RoundInQuestion); Index++;
+                        CarEntrant = new Entrant(CarData[0], CarData[1], CarData[2], CarData[3], CarData[4], Convert.ToInt32(CarData[5]), Convert.ToInt32(CarData[7]), Convert.ToInt32(CarData[9]), Index, Convert.ToBoolean(CarData[11]), tCD.GetClasses(C), GetCarModel(CarData[3], tCD), RoundInQuestion); Index++;
 
                         EntryList.Add(CarEntrant);
                     }
@@ -145,9 +146,11 @@ namespace GEM_Code_V3
             }
         }
 
-        public List<Entrant> LoadEntrants(string FilePath, int Index)
+        public List<Entrant> LoadEntrants(string FilePath, int Index, CommonData CD)
         {
             List<Entrant> EntryList = new List<Entrant>();
+
+            Car CarModel;
             Entrant CarEntrant;
 
             List<string> Classes = new List<string>() { "C1" };
@@ -166,7 +169,9 @@ namespace GEM_Code_V3
                         {
                             string[] CarData = Car.Split(',');
 
-                            CarEntrant = new Entrant(CarData[0], CarData[1], CarData[2], CarData[3], CarData[4], Convert.ToInt32(CarData[5]), Convert.ToInt32(CarData[7]), Convert.ToInt32(CarData[9]), 1, Convert.ToBoolean(CarData[11]), CD.GetClasses(Index), RoundInQuestion);
+                            CarModel = GetCarModel(CarData[3], CD);
+
+                            CarEntrant = new Entrant(CarData[0], CarData[1], CarData[2], CarData[3], CarData[4], Convert.ToInt32(CarData[5]) + CarModel.GetOVR(), Convert.ToInt32(CarData[7]), Convert.ToInt32(CarData[9]), 1, Convert.ToBoolean(CarData[11]), CD.GetClasses(Index), CarModel, RoundInQuestion);
 
                             EntryList.Add(CarEntrant);
                         }
@@ -179,7 +184,7 @@ namespace GEM_Code_V3
                     {
                         string[] CarData = Car.Split(',');
 
-                        CarEntrant = new Entrant(CarData[0], CarData[1], CarData[2], CarData[3], CarData[4], Convert.ToInt32(CarData[5]), Convert.ToInt32(CarData[7]), Convert.ToInt32(CarData[9]), 1, Convert.ToBoolean(CarData[11]), CD.GetClasses(Index), RoundInQuestion);
+                        CarEntrant = new Entrant(CarData[0], CarData[1], CarData[2], CarData[3], CarData[4], Convert.ToInt32(CarData[5]), Convert.ToInt32(CarData[7]), Convert.ToInt32(CarData[9]), 1, Convert.ToBoolean(CarData[11]), CD.GetClasses(Index), GetCarModel(CarData[3], CD), RoundInQuestion);
 
                         EntryList.Add(CarEntrant);
                     }
@@ -191,8 +196,21 @@ namespace GEM_Code_V3
             catch
             {
                 CalendarEditor.UseMessageBox("The Required File is Currently Open, please Close It to Continue.", "File Already Open");
-                return LoadEntrants(FilePath, Index);
+                return LoadEntrants(FilePath, Index, CD);
             }
+        }
+
+        public Car GetCarModel(string ModelName, CommonData CD)
+        {
+            foreach (Car CarModel in CD.GetCarList())
+            {
+                if (CarModel.GetCarName() == ModelName)
+                {
+                    return CarModel;
+                }
+            }
+
+            return new Car("", "", "", 0, 0, 0);
         }
 
         public bool ClassExistsInEntrants(string Item, List<Entrant> List)

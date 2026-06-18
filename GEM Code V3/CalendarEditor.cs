@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public partial class CalendarEditor : Form
     {
@@ -20,7 +20,7 @@ namespace GEM_Code_V3
         {
             InitializeComponent();
 
-            Calendar = RA.GetCalendar();
+            Calendar = RA.GetCalendar(CD);
 
             LoadCalendar();
 
@@ -231,7 +231,7 @@ namespace GEM_Code_V3
 
         public void LoadQualiFormats()
         {
-            List<string> Formats = new List<string>() { "A", "B", "C", "D", "E" };
+            List<string> Formats = new List<string>() { "A", "B", "C", "D", "E", "F" };
 
             foreach (string F in Formats)
             {

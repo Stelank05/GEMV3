@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public partial class CreateStandings : Form
     {
@@ -42,7 +42,7 @@ namespace GEM_Code_V3
             tb_DisplayClass.Text = CD.GetClasses(ClassIndex).GetClassName();
 
             Entrants.Clear();
-            Entrants = RA.LoadEntrants(EntrantsFilePath, lb_Classes.SelectedIndex);
+            Entrants = RA.LoadEntrants(EntrantsFilePath, lb_Classes.SelectedIndex, CD);
         }
 
         private void btn_CreateCrewStandings_Click(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public partial class CrewMaker : Form
     {
@@ -120,8 +120,10 @@ namespace GEM_Code_V3
 
                     int CarIndex = lb_ChooseCar.SelectedIndex;
 
-                    int OVR = CarList[CarIndex].GetOVR() + CarList[CarIndex].GetBOP() + Convert.ToInt32(tb_CS.Text) + Convert.ToInt32(tb_TS.Text);
-                    int Reliability = CarList[CarIndex].GetReliability() + Convert.ToInt32(tb_CR.Text);
+                    // CHANGE: Removed Car Scores from OVR + Reliability, readded on Crew Loading for Each Round, allows easier Changes to Cars, Car OVRs, and Car Reliabilities
+
+                    int OVR = Convert.ToInt32(tb_CS.Text) + Convert.ToInt32(tb_TS.Text);
+                    int Reliability = Convert.ToInt32(tb_CR.Text);
 
                     string EntrantString = Class + ",#" + tb_CN.Text + "," + tb_TN.Text + "," + CarList[CarIndex].GetCarName() + "," + CarList[CarIndex].GetManufacturer() + "," + OVR + ",," + tb_SRM.Text + ",," + Reliability + ",," + Convert.ToString(cb_FullTimeEntry.Checked) + Environment.NewLine;
 

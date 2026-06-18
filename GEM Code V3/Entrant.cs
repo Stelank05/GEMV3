@@ -1,25 +1,26 @@
 ﻿using System;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public class Entrant
     {
-        string Class, CarNo, TeamName, Car, Manufacturer;
+        string Class, CarNo, TeamName;//, Car, Manufacturer;
         int OVR, OVRa, Reliability, DNF, SRModifier, ClassIndex, LastStint, StintsInGarage, TotalStintsInGarage, TotalStaysInGarage, Points, Index, StintsSincePit = 0, TotalStops;
         bool InGarage = false, FullTimeEntry, ExtendedGarageStay = false;
 
-        public Entrant(string C, string CN, string TN, string Ca, string M, int OVRi, int SRM, int R, int I, bool FTE, Class EntrantClass, Round RoundData)
+        Car CarModel;
+
+        public Entrant(string C, string CN, string TN, string Ca, string M, int OVRi, int SRM, int R, int I, bool FTE, Class EntrantClass, Car CM, Round RoundData)
         {
             Class = C;
             CarNo = CN;
             TeamName = TN;
-            Car = Ca;
-            Manufacturer = M;
-            OVR = OVRi;
-            OVRa = OVRi;
+            CarModel = CM;
+            OVR = OVRi + CarModel.GetOVR() + CarModel.GetBOP();
+            OVRa = OVRi + CarModel.GetOVR() + CarModel.GetBOP();
             SRModifier = SRM;
             FullTimeEntry = FTE;
-            Reliability = R + EntrantClass.GetIRM() - RoundData.GetDefaultIncidentRate();
+            Reliability = R + CarModel.GetReliability() + EntrantClass.GetIRM() - RoundData.GetDefaultIncidentRate();
             DNF = RoundData.GetDefaultDNFRate() + EntrantClass.GetDNFRM();
             ClassIndex = EntrantClass.GetClassIndex();
             Index = I;
@@ -47,17 +48,17 @@ namespace GEM_Code_V3
 
         public string GetCar()
         {
-            return Car;
+            return CarModel.GetCarName();
         }
 
         public string GetManufacturer()
         {
-            return Manufacturer;
+            return CarModel.GetManufacturer();
         }
 
         public string GetCarAsWriteString()
         {
-            return CarNo + " " + TeamName + "," + Car + ",," + OVR;
+            return CarNo + " " + TeamName + "," + CarModel.GetCarName() + ",," + OVR;
         }
 
         public void AddToOVR(int AddValue)

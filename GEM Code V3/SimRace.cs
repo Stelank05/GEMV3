@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public partial class SimRace : Form
     {
@@ -151,7 +151,7 @@ namespace GEM_Code_V3
             QualiFormat = Calendar[RoundNo - 1].GetQualiFormat();
             PointsSystem = Calendar[RoundNo - 1].GetPointsSystem();
 
-            if (QualiFormat == "A" && PointsSystem == "A")
+            if (QualiFormat == "A")// && PointsSystem == "A")
             {
                 LMS = true;
             }
@@ -413,7 +413,7 @@ namespace GEM_Code_V3
         {
             if (btn_Advance.Text == "Start Qualifying")
             {
-                if (QualiFormat == "A")
+                if (QualiFormat == "A" || QualiFormat == "B")
                 {
                     tb_RaceLength.Text = "3 Sessions";
                     tb_CurrentStint.Text = "Qualifying 1";
@@ -425,7 +425,7 @@ namespace GEM_Code_V3
                     Save.SaveStint(EntryList, CD, tb_CurrentStint.Text, RoundName, Test);
                 }
 
-                else if (QualiFormat == "B")
+                else if (QualiFormat == "C")
                 {
                     tb_RaceLength.Text = "3 Sessions";
                     tb_CurrentStint.Text = "Qualifying 1";
@@ -443,7 +443,7 @@ namespace GEM_Code_V3
                     }
                 }
 
-                else if (QualiFormat == "C")
+                else if (QualiFormat == "D")
                 {
                     tb_RaceLength.Text = "3 Rounds";
                     tb_CurrentStint.Text = "R1 - Group 1";
@@ -468,7 +468,7 @@ namespace GEM_Code_V3
                     Save.SaveStint(ELA, CD, tb_CurrentStint.Text, RoundName, Test);
                 }
 
-                else if (QualiFormat == "D")
+                else if (QualiFormat == "E")
                 {
                     tb_RaceLength.Text = "Qualifying";
                     tb_CurrentStint.Text = "Qualifying 1";
@@ -482,7 +482,7 @@ namespace GEM_Code_V3
                     Save.SaveStint(EntryList, CD, tb_CurrentStint.Text, RoundName, Test);
                 }
 
-                else if (QualiFormat == "E")
+                else if (QualiFormat == "F")
                 {
                     tb_RaceLength.Text = "Qualifying";
                     tb_CurrentStint.Text = "Quali - Cars 1-" + (EntryList.Count / 4);
@@ -503,7 +503,7 @@ namespace GEM_Code_V3
 
             else if (btn_Advance.Text == "Continue Qualifying")
             {
-                if (QualiFormat == "A")
+                if (QualiFormat == "A" || QualiFormat == "B")
                 {
                     tb_CurrentStint.Text = "Qualifying 2";
 
@@ -516,7 +516,7 @@ namespace GEM_Code_V3
                     btn_Advance.Text = "Finish Qualifying";
                 }
 
-                else if (QualiFormat == "B")
+                else if (QualiFormat == "C")
                 {
                     tb_CurrentStint.Text = "Qualifying 2";
 
@@ -535,7 +535,7 @@ namespace GEM_Code_V3
                     btn_Advance.Text = "Finish Qualifying";
                 }
 
-                else if (QualiFormat == "C")
+                else if (QualiFormat == "D")
                 {
                     if (IC == 2)
                     {
@@ -573,7 +573,7 @@ namespace GEM_Code_V3
                     }
                 }
 
-                else if (QualiFormat == "D")
+                else if (QualiFormat == "E")
                 {
                     tb_CurrentStint.Text = "Qualifying 2";
 
@@ -589,7 +589,7 @@ namespace GEM_Code_V3
                     btn_Advance.Text = "Finish Qualifying";
                 }
 
-                else if (QualiFormat == "E")
+                else if (QualiFormat == "F")
                 {
                     if (tb_CurrentStint.Text == "Quali - Cars 1-" + (EntryList.Count / 4))
                     {
@@ -684,7 +684,7 @@ namespace GEM_Code_V3
 
             else if (btn_Advance.Text == "Finish Qualifying")
             {
-                if (QualiFormat == "A")
+                if (QualiFormat == "A" || QualiFormat == "B")
                 {
                     tb_CurrentStint.Text = "Qualifying 3";
 
@@ -706,7 +706,7 @@ namespace GEM_Code_V3
                     }
                 }
                 
-                else if (QualiFormat == "B")
+                else if (QualiFormat == "C")
                 {
                     tb_CurrentStint.Text = "Qualifying 3";
 
@@ -719,7 +719,7 @@ namespace GEM_Code_V3
                     btn_Advance.Text = "Start Race";
                 }
 
-                else if (QualiFormat == "C")
+                else if (QualiFormat == "D")
                 {
                     tb_CurrentStint.Text = "R3 - Fast " + QualiFormatCR3Count;
 
@@ -732,7 +732,7 @@ namespace GEM_Code_V3
                     btn_Advance.Text = "Start Race";
                 }
 
-                else if (QualiFormat == "D")
+                else if (QualiFormat == "E")
                 {
                     tb_CurrentStint.Text = "Qualifying 3";
 
@@ -749,7 +749,7 @@ namespace GEM_Code_V3
                     btn_Advance.Text = "Start Race";
                 }
 
-                else if (QualiFormat == "E")
+                else if (QualiFormat == "F")
                 {
                     tb_CurrentStint.Text = "Quali - Fast 6";
 

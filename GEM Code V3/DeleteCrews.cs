@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public partial class DeleteCrews : Form
     {
@@ -40,7 +40,7 @@ namespace GEM_Code_V3
             FilePath = Path.Combine(CD.GetSetupPath(), "Entrants", "Class " + Convert.ToString(SelectedClass + 1) + ".csv");
 
             EntrantList.Clear();
-            EntrantList = RA.LoadEntrants(FilePath, SelectedClass);
+            EntrantList = RA.LoadEntrants(FilePath, SelectedClass, CD);
 
             LoadEntrants();
         }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     static class Program
     {

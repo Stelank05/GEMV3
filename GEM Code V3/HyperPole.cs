@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public class HyperPole
     {

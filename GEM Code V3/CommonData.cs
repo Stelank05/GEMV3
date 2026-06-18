@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public class CommonData
     {
@@ -20,6 +20,7 @@ namespace GEM_Code_V3
             IMSA_LeaveGarageValues = new List<int>(), IMSA_EnterGarageValues = new List<int>(),
             Laps_LeaveGarageValues = new List<int>(), Laps_EnterGarageValues = new List<int>();
 
+        List<Car> CarList = new List<Car>();
         List<Class> Classes = new List<Class>();
 
         public CommonData()
@@ -28,6 +29,7 @@ namespace GEM_Code_V3
             LoadQualiFormatData();
             LoadClasses();
             LoadClassGarageValues();
+            LoadCarList();
         }
 
         public void Setup()
@@ -215,6 +217,19 @@ namespace GEM_Code_V3
             }
         }
 
+        public void LoadCarList()
+        {
+            RaceAdmin RA = new RaceAdmin();
+
+            string CarFolder = Path.Combine(FilePath, FolderName, "Car Data for V3");
+            string[] Files = Directory.GetFiles(CarFolder);
+
+            foreach (string File in Files)
+            {
+                CarList.AddRange(RA.LoadCars(File));
+            }
+        }
+
         public Class GetClasses(int I)
         {
             return Classes[I];
@@ -318,6 +333,11 @@ namespace GEM_Code_V3
         public string GetStandingsLocation()
         {
             return Path.Combine(FilePath, FolderName, StandingsLocation);
+        }
+
+        public List<Car> GetCarList()
+        {
+            return CarList;
         }
 
         public string GetWECDistance(int Stint)

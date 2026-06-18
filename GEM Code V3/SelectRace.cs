@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace GEM_Code_V3
+namespace GEM_Code_V3_1
 {
     public partial class SelectRace : Form
     {
@@ -16,7 +16,7 @@ namespace GEM_Code_V3
         {
             InitializeComponent();
 
-            Calendar = RA.GetCalendar();
+            Calendar = RA.GetCalendar(CD);
             LoadCalendar(Calendar);
 
             SetSizes();
