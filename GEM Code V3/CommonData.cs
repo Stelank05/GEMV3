@@ -221,7 +221,7 @@ namespace GEM_Code_V3_1
         {
             RaceAdmin RA = new RaceAdmin();
 
-            string CarFolder = Path.Combine(FilePath, FolderName, "Car Data for V3");
+            string CarFolder = Path.Combine(FilePath, FolderName, "V3 Car Data");
             string[] Files = Directory.GetFiles(CarFolder);
 
             foreach (string File in Files)
